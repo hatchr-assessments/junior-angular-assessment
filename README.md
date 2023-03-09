@@ -2,9 +2,11 @@
 
 ## Introduction
 
-This task is designed to evaluate your fundamental Angular development skills. You will be asked to implement a customer management dashboard and connect it to a mock customers API endpoint. You are also posed a small technical design consideration: What data structure will you use to represent the customer data? 
+This assessment is designed to test your Angular fundamentals. The tasks in this assessment will challenge you to create functional components, implement a service to handle API requests, and use routing to navigate between components.
 
-It is difficult to estimate how long a programming task will take for a developer to complete, but we believe it is unfair to reward candidates who are able to dedicate more time to a "take home" assessment than others. For these reasons, please limit your total working time to 90 minutes, this test is not about going the extra mile or investing as much time as you can.
+As a junior Angular developer, you are expected to have a good understanding of the fundamentals of Angular and be able to create basic applications. You should be comfortable working with components, services, and routing, and have a basic knowledge of how to handle data in an application.
+
+The assessment includes six tasks that build on each other and should take approximately 90 minutes to complete. We ask that you limit your total working time to 90 minutes for this assessment. Although the tasks are designed to be achievable within this timeframe, we encourage you to submit your assessment regardless of if you completed every question or not.
 
 ## The API
 
@@ -20,11 +22,12 @@ eg GET to `http://localhost:3004/customers` fetches all customers. While DELETE 
 
 ## Task steps
 
-1. Create a new component called "customer-list" that will display a table of all customers.
-2. Choose or create a data structure to represent the customer data. The data structure should have the fields needed to display the customer information in the table, as well as any additional fields needed to interact with the API endpoints.
-3. Implement methods in the customer.service.ts to interface with the customer management API. The service should have a method to get all customers and delete a customer.
-4. Implement the functionality to display all customers in the table using the service.
-5. Add a form that allows the user to add customers to the list, and a button to delete a customer from the list
+1. Create a new component called **`CustomerListComponent`**. This component should display a list of customers, including their name and email address. Use the mocked **`customers`** data provided to you to display the list of customers in the component.
+2. Add a new service called **`CustomerService`** to the application. The **`CustomerService`** should provide methods for getting a list of customers, getting the details of a specific customer, and updating a customer's details. Use the **`HttpClient`** service to make the relevant HTTP requests to the mocked API.
+3. Extend the **`CustomerListComponent`** created in the previous question to allow users to filter the list of customers by name. Add an input field to the component that allows users to enter a search query, and update the list of customers to show only those whose name matches the query. Use the **`filter()`** method to perform the filtering on the customer data returned from the **`CustomerService`**.
+4. Create a new component called **`CustomerDetailsComponent`**. This component should display the details of a single customer, including their name, email address, and a list of their orders. Use the **`CustomerService`** to make the relevant HTTP requests to the mocked API to get the customer and order details.
+5. Extend the **`CustomerListComponent`** created in the previous question to allow users to click on a customer in the list and view their details in the **`CustomerDetailsComponent`**. When a user clicks on a customer in the list, navigate to the **`CustomerDetailsComponent`** and display the selected customer's details.
+6. Discuss and suggest any improvements or changes you could make to this project improve performance, state management, or SEO. Explain your reasoning for your proposed changes
 
 ## How to Submit
 
